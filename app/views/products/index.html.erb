@@ -1,0 +1,10 @@
+<p>this is a test</p>
+
+<tbody>
+  <% @products.each do |displayProduct| %>
+    <tr>
+      <th><%= displayProduct.name %></th>
+      <th><%= displayProduct.description %></th>
+    </tr>
+  <% end %>
+</tbody>
