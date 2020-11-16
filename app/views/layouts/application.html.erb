@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FullStackProject</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Retro R Us</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <section class="section">
+      <div class="container">
+      <div>
+      <nav role="navigation" aria-label="main navigation" class="navbar is-fixed-top">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="/pokeman">
+                <img src="https://vignette.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png/revision/latest/scale-to-width-down/340?cb=20140520015336" alt="pokeball">
+              </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item" href="/products/">
+                  Products
+                </a>
+                <a class="navbar-item" href="/about/">
+                  About
+                </a>
+                <a class="navbar-item" href="/stats/">
+                  Stats
+                </a>
+                <a class="navbar-item" href="/types/">
+                  Types
+                </a>
+                </div>
+              </div>
+              <div class="navbar-end">
+                <div class="navbar-item">
+                </div>
+              </div>
+          </nav>
+          </div>
+      </div>
+    </section>
+      <div class="container">
+          <%= yield %>
+      </div>
   </body>
 </html>

@@ -1,10 +1,30 @@
 <p>this is a test</p>
 
-<tbody>
-  <% @products.each do |displayProduct| %>
-    <tr>
-      <th><%= displayProduct.name %></th>
-      <th><%= displayProduct.description %></th>
-    </tr>
-  <% end %>
-</tbody>
+
+<% @products.each do |productDisplay| %>
+<div class="columns is-mobile is-multiline is-centered is-3-desktop">
+<div class="column is-one-third">
+    <div class="card">
+      <div class="card-content">
+        <% if productDisplay.image.present? %>
+          <div class="card-image">
+            <figure class="image is-128x128">
+              <%= image_tag  productDisplay.image %>
+            </figure>
+          </div>
+        <% end %>
+        <p class="title">
+          <%= productDisplay.name %>
+        </p>
+        <p><%= productDisplay.description %> </p>
+      </div>
+      <footer class="card-footer">
+        <p class="card-footer-item">
+          Price: <br><%= productDisplay.price%>
+        </p>
+
+      </footer>
+    </div>
+</div>
+</div>
+<% end %>
