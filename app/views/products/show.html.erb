@@ -1,2 +1,26 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+
+<div class="columns is-mobile is-multiline is-centered is-3-desktop">
+<div class="column is-one-third">
+    <div class="card">
+      <div class="card-content">
+        <% if @products.image.present? %>
+          <div class="card-image">
+            <figure class="image is-128x128">
+              <%= image_tag  @products.image %>
+            </figure>
+          </div>
+        <% end %>
+        <p class="title">
+          <%= @products.name %>
+        </p>
+        <p><%= @products.description %> </p>
+      </div>
+      <footer class="card-footer">
+        <p class="card-footer-item">
+          Price: <br><%= @products.price.round %>
+        </p>
+
+      </footer>
+    </div>
+</div>
+</div>
