@@ -32,6 +32,7 @@ gem 'activeadmin'
 gem 'devise'
 gem 'image_processing'
 gem 'kaminari'
+gem 'ransack'
 
 
 group :development, :test do
