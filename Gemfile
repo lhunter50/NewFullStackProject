@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'activeadmin'
 gem 'devise'
 gem 'image_processing'
+gem 'kaminari'
 
 
 group :development, :test do
