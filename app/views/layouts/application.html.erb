@@ -32,6 +32,21 @@
                 <a class="navbar-item" href="/contact/">
                   Contact Us
                 </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    Cart
+                    <% if cart.present? %>
+                    <sup><%= cart.size %></sup>
+                  <%end%>
+                  </a>
+                  <div class="navbar-dropdown">
+                    <% cart.each do |product| %>
+                      <a class="navbar-item">
+                        <%= product.name %><%= link_to 'X', cart_path(product), method: :delete %>
+                      </a>
+                    <% end %>
+                  </div>
+                </div>
                 </div>
               </div>
               <div class="navbar-end">
@@ -43,7 +58,17 @@
       </div>
     </section>
       <div class="container">
-          <%= debug session[:shopping_cart] %>
+        <% if flash[:notice] %>
+          <article class="message is-success">
+            <div class="message-header">
+              <p>Success!</p>
+              <button class="delete"></button>
+            </div>
+            <div class="message-body">
+              <p><%= flash[:notice] %></p>
+            </div>
+          </article>
+        <% end %>
           <%= yield %>
       </div>
   </body>

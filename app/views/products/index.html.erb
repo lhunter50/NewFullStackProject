@@ -36,7 +36,7 @@
       <% else %>
         <%= form_with url: cart_index_path do %>
           <%= hidden_field_tag(:id, productDisplay.id)%>
-          <%= button_tag 'Add to Cart'%>
+          <input class="button is-dark" type="submit" value="Add to Cart">
         <% end %>
       <% end %>
 
