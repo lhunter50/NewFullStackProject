@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :contact, only: [:index, :show]
   resources :about, only: [:index, :show]
+  resources :cart, only: [:create, :destroy]
   root to: 'products#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

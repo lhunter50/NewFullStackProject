@@ -29,9 +29,19 @@
         <p class="card-footer-item">
           Price: <br><%= productDisplay.price.round %>
         </p>
+      <% if cart.include?(productDisplay)%>
+        <%= button_to cart_path(productDisplay), method: :delete do  %>
+          Remove From Cart
+        <% end %>
+      <% else %>
+        <%= form_with url: cart_index_path do %>
+          <%= hidden_field_tag(:id, productDisplay.id)%>
+          <%= button_tag 'Add to Cart'%>
+        <% end %>
+      <% end %>
 
       </footer>
     </div>
-</div>
+  </div>
 </div>
 <% end %>
