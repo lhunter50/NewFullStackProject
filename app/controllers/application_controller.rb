@@ -1,18 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :initialize_session
+  helper_method :cart
 
   private
 
   def initialize_session
-    session[:visit_count] ||= 0
+    session[:shopping_cart] ||= []
   end
 
-  def increase_visits
-
+  def cart
+    Product.find(session[:shopping_cart])
   end
-
-  def visit_count
-
-  end
-
 end
