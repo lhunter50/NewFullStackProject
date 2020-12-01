@@ -13,6 +13,13 @@ Rails.application.routes.draw do
   resources :contact, only: [:index, :show]
   resources :about, only: [:index, :show]
   resources :cart, only: [:create, :destroy]
+
+  scope "/checkout" do
+    post "create", to: "checkout#create", as "checkout_create"
+    get "success" to: "checkout#success", as "checkout_success"
+    get "cancel" to: "checkout#cancel" as "checkout_cancel"
+  end
+
   root to: 'products#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
