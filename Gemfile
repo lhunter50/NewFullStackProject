@@ -33,6 +33,7 @@ gem 'devise'
 gem 'image_processing'
 gem 'kaminari'
 gem 'ransack'
+gem 'stripe'
 
 
 group :development, :test do
