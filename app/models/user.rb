@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :product
   has_many :order
 
+  has_many :province_user
+  has_many :province, through: :province_user
+  accepts_nested_attributes_for :province_user, allow_destroy: true
+
 end

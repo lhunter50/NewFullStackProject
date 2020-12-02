@@ -5,14 +5,17 @@ ActiveAdmin.register User do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :username, :userEmail
+  permit_params :username, :userEmail, province_user_attributes: [:id, :user_id, :province_id]
   #
   # or
-  #
-  # permit_params do
-  #   permitted = [:username, :userEmail]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  form do |f|
+    f.semantic_errors # shows errors on :base
+    f.inputs          # builds an input field for every attribute
+    f.has_many :province_user, allow_destroy: true do |c|
+      c.input :province
+    end
+    f.actions         # adds the 'Submit' and 'Cancel' buttons
+  end
 
 end
